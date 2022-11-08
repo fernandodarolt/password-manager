@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+  <ion-content [fullscreen]="true" >
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Password Manager</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-list class="centerLogin">
+      <ion-img class="centerLogin" src="\assets\icon\padlock.png" style="width: 100px"></ion-img>
+      <br/>
+      <ion-item>
+        <ion-label color="dark" position="floating">Site</ion-label>
+        <ion-input required="true"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-label color="dark" position="floating">Login</ion-label>
+        <ion-input required="true" ></ion-input>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-label color="dark" position="floating">Senha</ion-label>
+        <ion-input type="password" required="true"></ion-input>
+      </ion-item>
+      <br/>
+      <ion-button color="dark" class="centerLogin">Armazenar</ion-button>
+    </ion-list>
 </ion-content>
