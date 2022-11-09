@@ -4,24 +4,57 @@
       <ion-title size="large">Password Manager</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-img class="centerLogin" 
+    src="assets\icon\padlock.png" 
+    style="width: 104px" 
+    alt="Icone de cadeado">
+  </ion-img>
     <ion-list class="centerLogin">
-      <ion-img class="centerLogin" src="\assets\icon\padlock.png" style="width: 100px"></ion-img>
       <br/>
       <ion-item>
-        <ion-label color="dark" position="floating">Site</ion-label>
-        <ion-input required="true"></ion-input>
+        <ion-label 
+          color="dark" 
+          position="floating">Site
+        </ion-label>
+        <ion-input 
+          required="true" 
+          [(ngModel)]="site">
+        </ion-input>
       </ion-item>
       <br/>
       <ion-item>
-        <ion-label color="dark" position="floating">Login</ion-label>
-        <ion-input required="true" ></ion-input>
+        <ion-label 
+          color="dark" 
+          position="floating">Login
+        </ion-label>
+        <ion-input 
+          required="true" 
+          [(ngModel)]="login" >
+        </ion-input>
       </ion-item>
       <br/>
       <ion-item>
-        <ion-label color="dark" position="floating">Senha</ion-label>
-        <ion-input type="password" required="true"></ion-input>
+        <ion-label 
+          color="dark" 
+          position="floating">Senha
+        </ion-label>
+        <ion-input 
+          type="password" 
+          required="true" 
+          [(ngModel)]="senha">
+        </ion-input>
       </ion-item>
       <br/>
-      <ion-button color="dark" class="centerLogin">Armazenar</ion-button>
+      <ion-button 
+        expand="block" 
+        (click)="armazenar()"
+        color="dark">Armazenar
+      </ion-button>
+      <br/>
+      <ion-button
+        expand="block"
+        (click)="limpar()"
+        color="danger">Limpar
+      </ion-button>
     </ion-list>
 </ion-content>
