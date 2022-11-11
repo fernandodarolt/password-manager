@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Credencial } from '../crendencial';
 import { LocalStorageService } from '../local-storage.service';
 
 @Component({
@@ -7,27 +8,22 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  public site: String = '';
-  public login: String ='';
-  public senha: String ='';
-
+  public _credencial = {} as Credencial;
   constructor(
     public local_storage:LocalStorageService
   ) {
-    this.site = this.local_storage.get('site');
-    this.login = this.local_storage.get('login');
-    this.senha = this.local_storage.get('senha');
+    this.carregar();
   }
-
+  carregar(){
+    //this.site   = this.local_storage.get('site');
+    //this.login  = this.local_storage.get('login');
+    //this.senha  = this.local_storage.get('senha');
+  }
   armazenar(){
-    console.log('Site =>' +this.site);
-    this.local_storage.set('site',this.site);
-    this.local_storage.set('login',this.login);
-    this.local_storage.set('senha',this.senha);
+    this.local_storage.append('credenciais',this._credencial);
   }
-
   limpar(){
+    // Serviço que limpa os dados do local storage
     this.local_storage.clear();
   }
 }

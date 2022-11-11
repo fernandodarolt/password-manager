@@ -1,60 +1,51 @@
-  <ion-content [fullscreen]="true" >
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Password Manager</ion-title>
+      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-img class="centerLogin" 
-    src="assets\icon\padlock.png" 
-    style="width: 104px" 
-    alt="Icone de cadeado">
-  </ion-img>
-    <ion-list class="centerLogin">
-      <br/>
+
+  <div id="container">
+    <ion-list>
       <ion-item>
-        <ion-label 
-          color="dark" 
-          position="floating">Site
-        </ion-label>
-        <ion-input 
-          required="true" 
-          [(ngModel)]="site">
-        </ion-input>
+        <ion-label position="stacked">Site</ion-label>
+        <ion-input
+          placeholder="http://site.com" 
+          [(ngModel)]="_credencial.site"
+        ></ion-input>
       </ion-item>
-      <br/>
       <ion-item>
-        <ion-label 
-          color="dark" 
-          position="floating">Login
-        </ion-label>
-        <ion-input 
-          required="true" 
-          [(ngModel)]="login" >
-        </ion-input>
+        <ion-label position="stacked">Login</ion-label>
+        <ion-input
+          placeholder="User name"
+          [(ngModel)]="_credencial.login"
+        ></ion-input>
       </ion-item>
-      <br/>
       <ion-item>
-        <ion-label 
-          color="dark" 
-          position="floating">Senha
-        </ion-label>
+        <ion-label position="stacked">Senha</ion-label>
         <ion-input 
-          type="password" 
-          required="true" 
-          [(ngModel)]="senha">
-        </ion-input>
+          type="password"
+          [(ngModel)]="_credencial.senha"
+        ></ion-input>
       </ion-item>
-      <br/>
-      <ion-button 
-        expand="block" 
-        (click)="armazenar()"
-        color="dark">Armazenar
-      </ion-button>
-      <br/>
-      <ion-button
-        expand="block"
-        (click)="limpar()"
-        color="danger">Limpar
-      </ion-button>
-    </ion-list>
+    </ion-list>    
+    <ion-button 
+      expand="block"
+      (click)="armazenar()"
+    >Armazenar</ion-button>
+    
+    <ion-button
+      expand="block"
+      (click)="limpar()"
+      color="danger"
+    >Limpar</ion-button>
+  </div>
 </ion-content>
