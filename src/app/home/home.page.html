@@ -1,31 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large" >Password Mananger</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
+    <div>
+      <img id="logo" src="assets/img/lock-icon.png" alt="Cadeado"/>
+    </div>
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Site</ion-label>
         <ion-input
-          placeholder="http://site.com" 
+          placeholder="Informe o site" 
           [(ngModel)]="_credencial.site"
         ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Login</ion-label>
         <ion-input
-          placeholder="User name"
+          placeholder="Informe o login"
           [(ngModel)]="_credencial.login"
         ></ion-input>
       </ion-item>

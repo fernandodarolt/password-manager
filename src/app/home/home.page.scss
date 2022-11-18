@@ -1,11 +1,10 @@
 #container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 500px;
+  min-height: 560px;    
+  margin: 0px auto;
+  position: relative;   
+  justify-content: center;
+  
 }
 
 #container strong {
@@ -24,4 +23,11 @@
 
 #container a {
   text-decoration: none;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: auto;
 }
