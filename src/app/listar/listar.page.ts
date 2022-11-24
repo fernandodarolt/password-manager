@@ -39,7 +39,7 @@ export class ListarPage implements OnInit {
 
   //Recebe os dados do BD, salva no localstorage e chama metodo carregar.
   download(){
-    this.firebase.download().subscribe((data:any)=>{console.log(data);
+    this.firebase.download().subscribe((data:any)=>{
       this.ls.set('credenciais', data);
       this.carregar();
         }
