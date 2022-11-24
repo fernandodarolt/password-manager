@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Credencial } from '../crendencial';
+import { FirebaseService } from '../firebase.service';
 import { LocalStorageService } from '../local-storage.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ListarPage implements OnInit {
   public pass_type:string = 'password' ;
   
   constructor(
-    public local_storage:LocalStorageService
+    public ls:LocalStorageService,
+    public firebase:FirebaseService
   ) {}
 
   ngOnInit() {
@@ -30,8 +32,22 @@ export class ListarPage implements OnInit {
     }
 
   }
+  //Chama metodo de upload para o BD.
+  upload(){
+    this.firebase.upload();
+  }
 
+  //Recebe os dados do BD, salva no localstorage e chama metodo carregar.
+  download(){
+    this.firebase.download().subscribe((data:any)=>{console.log(data);
+      this.ls.set('credenciais', data);
+      this.carregar();
+        }
+      );
+  }
+
+  //Carrega a lista de dados do localstorage e armazena no array para exibir no front.
   carregar(){
-    this.data = this.local_storage.getJSON('credenciais');
+    this.data = this.ls.getJSON('credenciais');
   }
 }
