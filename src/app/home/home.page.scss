@@ -25,9 +25,11 @@
   text-decoration: none;
 }
 
-#logo {
-  display: flex;
-  justify-content: center;
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   width: 150px;
   height: auto;
 }
